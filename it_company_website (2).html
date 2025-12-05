@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simply Circuit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #222;
+        }
+        header {
+            background: #121212;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 260px;
+            margin-bottom: 20px;
+        }
+        nav {
+            background: #1e1e1e;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #ffa44f;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #ff7a00;
+        }
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            color: #ff7a00;
+            border-left: 5px solid #ff7a00;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+        .service-box {
+            background: #ffffff;
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+        }
+        footer {
+            background: #121212;
+            color: #ccc;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        .hero {
+            background: linear-gradient(to right, #0d47a1, #002f6c);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        .hero-btn {
+            background: #ff7a00;
+            padding: 12px 25px;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo-text {
+            color: #ffa44f;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ffa44f;
+        }
+        .mobile-menu {
+            display: none;
+            background: #1e1e1e;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 10px;
+            color: #ffa44f;
+            text-decoration: none;
+        }
+        @media(max-width: 768px) {
+            nav a { display: none; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="data:image/png;base64,aACTJZ4z4DEPl+4i8XzGkstxwXEeQVCCowsFczzF798bp1BWfsKytOM3wEHj046k...ZRvbMyWqXUbXMPv99/4+VB9YK1FkjwS/z98yk7JgATx5gAAAABJRU5ErkJggg=='" alt="Simply Circuit Logo" style="max-width:300px; margin-bottom:20px;" />
+        <h1>IT Company Services</h1>
+        <p>Your One‑Stop Technology Provider</p>
+    </header>
+    <nav>
+        <div class="nav-container">
+            <span class="logo-text">Simply Circuit</span>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        </div>
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="#business">Business</a>
+            <a href="#residential">Residential</a>
+            <a href="#repair">Repairs</a>
+            <a href="#3dprinting">3D Printing</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+    <section class="hero">
+        <h1>Your One-Stop Tech Solution</h1>
+        <p>Professional IT services, device repairs, and custom solutions for home and business.</p>
+        <a href="#contact" class="hero-btn">Contact Us</a>
+    </section>
+
+    <section>
+        <h2>Business IT Solutions</h2>
+        <div class="service-box">
+            <h3>Network Deployment</h3>
+            <p>Secure, high‑performance network setup for small and medium businesses.</p>
+        </div>
+        <div class="service-box">
+            <h3>PC Management & Maintenance</h3>
+            <p>Full workstation support including monitoring, updates, performance optimization, and troubleshooting.</p>
+        </div>
+        <div class="service-box">
+            <h3>IT Consulting</h3>
+            <p>Professional guidance for upgrades, cybersecurity, infrastructure planning, and long‑term technology strategy.</p>
+        </div>
+        <div class="service-box">
+            <h3>Remote Support</h3>
+            <p>Fast, secure troubleshooting without requiring an on‑site visit.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Residential Services</h2>
+        <div class="service-box">
+            <h3>Network Upgrades</h3>
+            <p>Improve your home Wi‑Fi with better speeds, coverage, and security.</p>
+        </div>
+        <div class="service-box">
+            <h3>Custom PC Building</h3>
+            <p>Custom desktops built for gaming, creative work, or productivity.</p>
+        </div>
+        <div class="service-box">
+            <h3>PC Repair</h3>
+            <p>Diagnostics, hardware replacement, virus cleanup, and performance restoration.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Device Repair Services</h2>
+        <div class="service-box">
+            <h3>Smartphones, Tablets & Consoles</h3>
+            <p>Repairs for screens, ports, overheating issues, storage failures, system errors, and more.</p>
+        </div>
+        <div class="service-box">
+            <h3>Console Cleaning</h3>
+            <p>Deep cleaning to restore airflow, reduce overheating, and extend hardware lifespan.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>3D Printing Services</h2>
+        <div class="service-box">
+            <h3>Custom 3D Printing</h3>
+            <p>High‑quality 3D prints for prototypes, replacement parts, models, and custom designs.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Simply Circuit — All Rights Reserved</p>
+    </footer>
+<section id="contact">
+        <h2>Contact Us</h2>
+        <div class="service-box">
+            <form action="mailto:kochensparger.chelsea@gmail.com" method="POST" enctype="text/plain">
+                <label>Name:</label><br>
+                <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+                <label>Email:</label><br>
+                <input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+                <label>Message:</label><br>
+                <textarea name="message" rows="6" required style="width:100%; padding:10px; margin-bottom:15px;"></textarea><br>
+                <button type="submit" style="background:#ff7a00; color:#fff; padding:12px 25px; border:none; border-radius:6px; font-size:16px; cursor:pointer;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
