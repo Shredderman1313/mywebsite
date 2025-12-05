@@ -109,16 +109,20 @@
             color: #ffa44f;
         }
         .mobile-menu {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
             background: #1e1e1e;
             text-align: center;
-            padding: 10px 0;
+            transition: max-height 0.3s ease;
         }
         .mobile-menu a {
             display: block;
             padding: 10px;
             color: #ffa44f;
             text-decoration: none;
+        }
+        .mobile-menu.show {
+            max-height: 500px; /* adjust if more links added */
         }
         @media(max-width: 768px) {
             nav a { display: none; }
@@ -128,10 +132,11 @@
 </head>
 <body>
     <header>
-        <img src="data:image/png;base64,aACTJZ4z4DEPl+4i8XzGkstxwXEeQVCCowsFczzF798bp1BWfsKytOM3wEHj046k...ZRvbMyWqXUbXMPv99/4+VB9YK1FkjwS/z98yk7JgATx5gAAAABJRU5ErkJggg=='" alt="Simply Circuit Logo" style="max-width:300px; margin-bottom:20px;" />
+        <img src="assets/logo.png" alt="Simply Circuit Logo" />
         <h1>IT Company Services</h1>
         <p>Your One‑Stop Technology Provider</p>
     </header>
+
     <nav>
         <div class="nav-container">
             <span class="logo-text">Simply Circuit</span>
@@ -145,11 +150,18 @@
             <a href="#contact">Contact</a>
         </div>
     </nav>
+
     <script>
         function toggleMenu() {
-            var menu = document.getElementById('mobileMenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            document.getElementById('mobileMenu').classList.toggle('show');
         }
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.remove('show');
+            });
+        });
     </script>
 
     <section class="hero">
@@ -158,7 +170,7 @@
         <a href="#contact" class="hero-btn">Contact Us</a>
     </section>
 
-    <section>
+    <section id="business">
         <h2>Business IT Solutions</h2>
         <div class="service-box">
             <h3>Network Deployment</h3>
@@ -178,7 +190,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="residential">
         <h2>Residential Services</h2>
         <div class="service-box">
             <h3>Network Upgrades</h3>
@@ -194,7 +206,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="repair">
         <h2>Device Repair Services</h2>
         <div class="service-box">
             <h3>Smartphones, Tablets & Consoles</h3>
@@ -206,7 +218,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="3dprinting">
         <h2>3D Printing Services</h2>
         <div class="service-box">
             <h3>Custom 3D Printing</h3>
@@ -214,13 +226,11 @@
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Simply Circuit — All Rights Reserved</p>
-    </footer>
-<section id="contact">
+    <section id="contact">
         <h2>Contact Us</h2>
         <div class="service-box">
-            <form action="mailto:kochensparger.chelsea@gmail.com" method="POST" enctype="text/plain">
+            <!-- Formspree form -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <label>Name:</label><br>
                 <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
                 <label>Email:</label><br>
@@ -232,5 +242,8 @@
         </div>
     </section>
 
+    <footer>
+        <p>© 2025 Simply Circuit — All Rights Reserved</p>
+    </footer>
 </body>
 </html>
